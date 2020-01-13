@@ -9,6 +9,9 @@ If an asset is repeated in many build directories and it is large
 (bearing in mind that symlinks are not allowed in docker build contexts) 
 then consider building the asset into a parent FROM image.
 
+One can of course always specify a build context and use `-f` to point to a dockerfile,
+when there is a more complex directory structure than the default flat-with-dockerfile.
+
 Build an image from the dockerfile in directory `myproject` and push image:
 
         docker build --no-cache -t mydockerhubidentity/myproject:latest ./myproject
@@ -17,3 +20,7 @@ Build an image from the dockerfile in directory `myproject` and push image:
 `.dockerignore` is included just in case you use the root as build context for any reason, 
 it would not be used if using the above build strategy
 since the build context `./myproject` does not contain it.
+
+## TODO
+
+- centos7-apache
