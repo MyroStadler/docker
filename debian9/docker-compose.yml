@@ -1,0 +1,11 @@
+version: '2.0'
+
+services:
+
+  app:
+    stdin_open: true # https://github.com/docker/compose/issues/5016
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/var/playpen
