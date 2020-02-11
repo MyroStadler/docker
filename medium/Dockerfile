@@ -1,9 +1,9 @@
 # 0.0.0
 FROM rdeleo/centos7-php7.3-apache-dev:latest
-MAINTAINER Nobody
+MAINTAINER myro.stadler+dockerhub.medium@gmail.com
 
 RUN yum update -y && \
-	yum install git make vim nmap -y && \
+	yum install git make vim composer nmap gcc postgresql qpdf sox qrencode python3 xorg-x11-server-Xvfb libsass -y && \
 	echo
 
 RUN yum update -y && \
@@ -16,9 +16,4 @@ RUN yum update -y && \
 	yum install chromium -y && \
 	echo
 
-RUN yum update -y && \
-	yum install unoconv postgresql qpdf sox qrencode python3 xorg-x11-server-Xvfb -y && \
-	yum install ruby -y && \
-	gem install sass && \
-	echo
-#ffmpeg coreutils ruby-sass  yui-compressor python3-pyparsing
+#ffmpeg coreutils yui-compressor python3-pyparsing
