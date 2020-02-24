@@ -1,0 +1,13 @@
+version: '2.0'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./assets/test.html:/var/www/html/test.html
+      - ./assets/test.php:/var/www/html/test.php
+      - ./assets/phpinfo.php:/var/www/html/phpinfo.php
+    ports:
+      - 80:80
