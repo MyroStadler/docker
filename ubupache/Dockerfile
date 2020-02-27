@@ -24,11 +24,13 @@ RUN printf "\n" && \
 RUN printf "\n" && \
 	apt-get install \
 		php7.4-pgsql php7.4-mysql php7.4-json php7.4-mbstring php7.4-curl php7.4-xdebug \
-		php7.4-opcache php7.4-dom php7.4-gd php7.4-xml \
+		php7.4-opcache php7.4-dom php7.4-gd php7.4-xml php7.4-bcmath \
 		-y && \
 	printf "\n"
 
 RUN printf "\n" && \
+	a2dissite 000-default && \
+	rm -Rf /var/www/html/* && \
 	a2enmod rewrite && \
 	a2dismod php7.2 && \
 	a2enmod php7.4 && \
